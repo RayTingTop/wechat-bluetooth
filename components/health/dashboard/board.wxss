@@ -3,7 +3,7 @@
   margin:0 auto;
   width:100%;
   height: 30%;
-  border:1px solid red;
+  /* border:1px solid red; */
   position: relative;
 }
 /* 背景图片 */
@@ -12,20 +12,25 @@
   height: 100%;
   position: absolute;
   bottom: 0;
-   border:1px solid blue;
+  /* border:1px solid blue; */
 }
 
-.pointer{
+.pointers{
   position: absolute;
-  right: 45%;
-  bottom:13.5%;
-  width: 60%;
+  right: 47.15%;
+  bottom:15.73%;
 }
 /* 长指针（低压） */
 .pointer1{
-  height: 20rpx;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 /* 短指针（高压） */
 .pointer2{
-  height: 20rpx;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }

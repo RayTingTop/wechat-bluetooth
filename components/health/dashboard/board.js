@@ -6,7 +6,7 @@ const animation = wx.createAnimation({
   duration: 200,
   timingFunction: 'ease-out',
   delay: 0,
-  transformOrigin: '90% center' //左右，上下
+  transformOrigin: '94% center' //指针旋转中心位置，左右，上下
 })
 
 Component({
@@ -37,13 +37,13 @@ Component({
       type: String,
       value: "/images/health/pointer2.png"
     },
-    width: { //宽
+    width: { //宽 宽/高=1.65
       type: Number,
       value: 750
     },
-    height: { //高
+    height: { //高 宽/高=1.65
       type: Number,
-      value: 400
+      value: 455
     },
   },
   data: {
