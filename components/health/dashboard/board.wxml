@@ -1,0 +1,5 @@
+<view class="dash" style="width:{{width}}rpx;height:{{height}}rpx">
+    <image src="{{backImage}}" class="back"></image>
+    <image src="{{pointer1}}" class="pointer pointer1" animation="{{lowAnimationData}}"></image>
+    <image src="{{pointer2}}" class="pointer pointer2" animation="{{highAnimationData}}"></image>
+</view>

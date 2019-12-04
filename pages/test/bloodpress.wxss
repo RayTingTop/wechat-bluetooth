@@ -1,0 +1,155 @@
+ page {
+  background-color: #F8F8F8;
+  height: 100%;
+}
+/*用户信息*/
+.user {
+  position: relative;
+  background: #fff;
+  color: #fff;
+}
+
+.user-header {
+  display: flex;
+  padding-top: 1px;
+  width: 100%;
+  height: 200rpx;
+  align-content: center;
+  background-color: #3CB66F;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: auto 100%;
+}
+
+.user-header .user-header-cont {
+  display: flex;
+  margin: auto;
+  margin-bottom: 135rpx;
+  width: 79%;
+  align-items: center;
+}
+
+.user-header .user-header-cont .user-header-avatar {
+  display: block;
+  margin-right: 30rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 5rpx solid #fff;
+  overflow: hidden;
+}
+
+
+/*绑定信息*/
+.bind-info{
+  position: absolute;
+  top: 163rpx;
+  display: block;
+  width: 100%;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  color: white;
+  background:#2D8351;
+  text-align: center;
+}
+.no{
+  background:#F6CD59;
+}
+.unBind{
+  height: 40rpx;
+  width: 100rpx;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  border-radius: 25rpx;
+  background: #F6CD59;
+  color: white;
+  box-shadow:0 0 6px rgba(50, 50, 50, 0.3);
+}
+
+/*结果*/
+.result,.btns{
+  width: 90%;
+  margin: 50rpx auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.result view {
+  display:block;
+  margin: 0 30rpx;
+  text-align: center;
+  line-height: 1rem;
+}
+.result view .data{
+  font-weight: bolder;
+  color: #3CB66F;
+}
+.result view .pro{
+  font-size: 26rpx;
+}
+
+
+/* 蓝牙按钮 */
+.blue-view{
+  position: relative;
+}
+.connected{
+  position: absolute;
+  right: 6%;
+  width:50rpx;
+  height:50rpx;
+  border-radius:50%;
+  padding: 20rpx;
+}
+.connected image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+
+/* 检测按钮 */
+.btns view{
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 110rpx;
+  border-radius:50%;
+  border: 2px solid white;
+  text-align: center;
+}
+.btns .start{
+  background: #3CB66F;
+  color: white;
+  box-shadow:0 0 6px rgba(50, 50, 50, 0.3);
+}
+.btns .stop{
+  background: #F0F0F0;
+  box-shadow:0 0 6px rgba(50, 50, 50, 0.3);
+}
+
+
+/* 日志 */
+.log {
+  width: 90%;
+  left: 5%;
+  border: 1px solid #acacac;
+  position: relative;
+  margin-top: 10rpx;
+}
+.text-box{
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  padding: 10rpx 0;
+  display: flex;
+  min-height: 400rpx;
+  text-align: left;
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 1.2em;
+}
+
+.scroll-list {
+  max-height: 400rpx;
+}
+

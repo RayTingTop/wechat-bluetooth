@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "血压检测",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#3CB66F",
+  "usingComponents": {
+    "dashboard": "/components/health/dashboard/board"
+  }
+}

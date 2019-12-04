@@ -1,0 +1,74 @@
+<wxs module="utils">
+module.exports.max = function(n1, n2) {
+  return Math.max(n1, n2)
+}
+module.exports.len = function(arr) {
+  arr = arr || []
+  return arr.length
+}
+</wxs>
+<view class="container" wx:if="{{ userInfo.user_id > 0 }}">
+ <!-- 用户信息 -->
+  <view class="user" >
+    <view class="user-header" style="background-image: url('/images/user-bg.png');">
+      <view class="user-header-cont">
+        <view class="user-header-avatar">
+          <open-data class="" lang="zh_CN" type="userAvatarUrl"></open-data>
+        </view>
+        <open-data class="user-header-cont-name" lang="zh_CN" type="userNickName"></open-data>
+      </view>
+    </view>
+    <text class="bind-info no" wx:if="{{!userBind.pmw_member_id}}">您尚未绑定华仁堂官网账户</text>
+    <text class="bind-info"  wx:if="{{userBind.pmw_member_id}}">您已绑定华仁堂用户 {{userBind.pmw_member_username}} , 手机号码 {{userBind.pmw_member_mobile}}</text>
+  </view>
+
+  <!-- 检测数据显示 -->
+  <view class="result">
+    <view>
+      <text class="data">{{result.high_press}}\n</text>
+      <text class="pro">高压/mmHg</text>
+    </view>
+    <view>
+      <text class="data">{{result.low_press}}\n</text>
+      <text class="pro">低压/mmHg</text>
+    </view>
+    <view>
+      <text class="data">{{result.heart_rate}}\n</text>
+      <text class="pro">心率/bpm</text>
+    </view>
+  </view>
+
+  <!-- 数据显示表盘组件，属性依次是：宽、高、低压、高压、表盘背景、指针1(低压)、指针2(高压) -->
+  <dashboard  width="700" height="435" low_press="{{result.low_press}}" high_press="{{result.high_press}}" 
+    dashback ="/images/health/dash.png"
+    pointer1="/images/health/pointer1.png"
+    pointer2="/images/health/pointer2.png">
+  </dashboard>
+
+  <!-- 日志，不在需要 -->
+  <view class='log' style="display:none">
+    <view>
+      <scroll-view scroll-y="true" class='text-box scroll-list'>
+        <text>{{textLog}}</text>
+      </scroll-view>
+    </view>
+  </view> 
+
+  <!-- 蓝牙按钮 -->
+  <view class='blue-view'>
+    <view bindtap="cleanLogs" class="connected" style="background:#3CB66F;" bindtap="reStartScan" wx:if="{{connected}}">
+      <image src="/images/health/bluetooth_success.png"></image>
+    </view>
+    <view bindtap="cleanLogs" class="connected" style="background:#808080;" bindtap="reStartScan" wx:if="{{!connected}}">
+      <image src="/images/health/bluetooth_fail.png"></image>
+    </view>
+  </view>
+
+  <!-- 检测与停止按钮 -->
+  <view class='btns'>
+    <view bindtap="doTest" class="start" style="background-color:{{startcolor}}"  data-opr="start" wx:if="{{!istest}}" disabled="true">开始</view>
+    <view bindtap="doTest" class="stop" data-opr="stop" wx:if="{{istest}}">停止</view>
+    <view bindtap="test" class="stop" data-opr="stop">测试</view>
+  </view>
+  <navigator url="../record/bloodpress" hover-class="navigator-hover">查看记录</navigator>
+</view>
